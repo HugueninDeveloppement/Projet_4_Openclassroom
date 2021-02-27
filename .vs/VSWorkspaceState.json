@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\css"
+    "\\css",
+    "\\img",
+    "\\includes",
+    "\\js"
   ],
-  "SelectedNode": "\\css\\bootstrap.css",
+  "SelectedNode": "\\js\\gmaps.js",
   "PreviewInSolutionExplorer": false
 }
