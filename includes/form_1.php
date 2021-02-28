@@ -1,15 +1,15 @@
 <?php	
-	if(empty($_POST['name']) && strlen($_POST['name']) == 0 || empty($_POST['email']) && strlen($_POST['email']) == 0 || empty($_POST['input_504']) && strlen($_POST['input_504']) == 0 || empty($_POST['message']) && strlen($_POST['message']) == 0)
+	if(empty($_POST['name']) && strlen($_POST['name']) == 0 || empty($_POST['email']) && strlen($_POST['email']) == 0 || empty($_POST['info']) && strlen($_POST['info']) == 0 || empty($_POST['message']) && strlen($_POST['message']) == 0)
 	{
 		return false;
 	}
 	
 	$name = $_POST['name'];
 	$email = $_POST['email'];
-	$input_504 = $_POST['input_504'];
+	$input_504 = $_POST['info'];
 	$message = $_POST['message'];
 	
-	$to = 'receiver@yoursite.com'; // Email submissions are sent to this email
+	$to = 'warrenness@live.fr'; // Email submissions are sent to this email
 
 	// Create email	
 	$email_subject = "Message from your website";

@@ -3,9 +3,9 @@
  *
  * v1.3.6
  *
- * License: MIT <https://opensource.org/licenses/mit-license.php> - see LICENSE file
+ * License: MIT <http://opensource.org/licenses/mit-license.php> - see LICENSE file
  *
- * https://ReactiveRaven.github.com/jqBootstrapValidation/
+ * http://ReactiveRaven.github.com/jqBootstrapValidation/
  */
 
 (function ($) {
@@ -51,7 +51,7 @@
 
                     $inputs.each(function (i, el) {
                         var $this = $(el),
-                            $controlGroup = $this.parents(".control-group").first();
+                            $controlGroup = $this.parents(".form-group, .checkbox").first();
                         if (
                             $controlGroup.hasClass("warning")
                         ) {
@@ -82,7 +82,7 @@
 
                     // Get references to everything we're interested in
                     var $this = $(this),
-                        $controlGroup = $this.parents(".control-group").first(),
+                        $controlGroup = $this.parents(".form-group, .checkbox").first(),
                         $helpBlock = $controlGroup.find(".help-block").first(),
                         $form = $this.parents("form").first(),
                         validatorNames = [];
@@ -90,7 +90,7 @@
                     // create message container if not exists
                     if (!$helpBlock.length && settings.options.autoAdd && settings.options.autoAdd.helpBlocks) {
                         $helpBlock = $('<div class="help-block" />');
-                        $controlGroup.find('.controls').append($helpBlock);
+                        $controlGroup.append($helpBlock);
                         createdElements.push($helpBlock[0]);
                     }
 
@@ -482,7 +482,7 @@
                                         (settings.options.prependExistingHelpBlock ? $helpBlock.data("original-contents") : ""));
                                 } else {
                                     // Multiple? Being sloppy? Glue them together into an UL.
-                                    $helpBlock.html("<ul role=\"alert\"><li>" + errorsFound.join("</li><li>") + "</li></ul>" +
+                                    $helpBlock.html("<ul class=\"list-unstyled alert alert-warning\" role=\"alert\"><li>" + errorsFound.join("</li><li>") + "</li></ul>" +
                                         (settings.options.prependExistingHelpBlock ? $helpBlock.data("original-contents") : ""));
                                 }
                             } else {
@@ -510,7 +510,7 @@
 
                         var
                             $this = $(this),
-                            $controlGroup = $this.parents(".control-group").first(),
+                            $controlGroup = $this.parents(".form-group, .checkbox").first(),
                             $helpBlock = $controlGroup.find(".help-block").first();
 
                         // remove our events
@@ -788,7 +788,7 @@
             validemail: {
                 name: "Validemail",
                 type: "regex",
-                regex: "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\.[A-Za-z]{2,4}",
+                regex: "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\.[A-Za-z]{2,10}",
                 message: "Not a valid email address<!-- data-validator-validemail-message to override -->"
             },
             passwordagain: {
@@ -878,7 +878,7 @@
      * Thanks to Jason Bunting via StackOverflow.com
      *
      * http://stackoverflow.com/questions/359788/how-to-execute-a-javascript-function-when-i-have-its-name-as-a-string#answer-359910
-     * Short link: https://tinyurl.com/executeFunctionByName
+     * Short link: http://tinyurl.com/executeFunctionByName
     **/
     function executeFunctionByName(functionName, context /*, args*/) {
         var args = Array.prototype.slice.call(arguments).splice(2);
