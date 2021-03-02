@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\css",
+    "\\fonts",
     "\\img",
     "\\includes",
     "\\js"
   ],
-  "SelectedNode": "\\formulaire.html",
+  "SelectedNode": "\\style.css",
   "PreviewInSolutionExplorer": false
 }
